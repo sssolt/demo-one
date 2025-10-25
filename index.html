@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoScaledConversions - AI Receptionist Demo</title>
+    
+    <!-- Google reCAPTCHA v3 for abuse prevention -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc1SfYrAAAAAFC3ac5mLjWrO9zLVfIeTZoHd5Ss"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
@@ -364,8 +367,8 @@
         // CONFIGURATION - REPLACE THESE VALUES
         // ========================================
         const RETELL_CONFIG = {
-            publicKey: 'YOUR_RETELL_PUBLIC_KEY',  // Get from Retell Dashboard -> Keys
-            defaultAgentId: 'YOUR_DEFAULT_AGENT_ID',  // Fallback agent if no ?agent= in URL
+            publicKey: 'public_key_174aeb9e4b1289f30b5bc',  // Get from Retell Dashboard -> Keys
+            defaultAgentId: 'agent_67f78d2d3c8f4aec0630f4baef',  // Fallback agent if no ?agent= in URL
             widgetColor: '#cffe4f',  // Your brand color (matches button)
             widgetTitle: 'Talk to AI Assistant'
         };
@@ -398,6 +401,7 @@
             script.setAttribute('data-agent-id', agentId);
             script.setAttribute('data-title', RETELL_CONFIG.widgetTitle);
             script.setAttribute('data-color', RETELL_CONFIG.widgetColor);
+            script.setAttribute('data-recaptcha-key', '6Lc1SfYrAAAAAFC3ac5mLjWrO9zLVfIeTZoHd5Ss'); // reCAPTCHA v3 site key
             
             // Optional customization (uncomment to use):
             // script.setAttribute('data-bot-name', 'AI Assistant');
